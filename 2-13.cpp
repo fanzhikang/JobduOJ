@@ -20,12 +20,12 @@ struct student {
 
 int main() {
     int n;
-    student Buf[1000];
+    student buf[1000];
     while (scanf("%d", &n) != EOF) {
         for (int i = 0; i < n; ++i) {
-            scanf("%s%s%s%d", Buf[i].no, Buf[i].name, Buf[i].sex, &Buf[i].age);
+            scanf("%s%s%s%d", buf[i].no, buf[i].name, buf[i].sex, &buf[i].age);
         }
-        sort(Buf, Buf + n);
+        sort(buf, buf + n);
         int m;
         scanf("%d", &m);
         while (m-- != 0) {
@@ -35,7 +35,7 @@ int main() {
             int top = n - 1, base = 0;
             while (top >= base) {
                 int mid = (top + base) / 2;
-                int tmp = strcmp(Buf[mid].no, x);
+                int tmp = strcmp(buf[mid].no, x);
                 if (tmp == 0) {
                     ans = mid;
                     break;
@@ -45,7 +45,7 @@ int main() {
             if (ans == -1) {
                 printf("No Answer!\n");
             } else {
-                printf("%s %s %s %d\n", Buf[ans].no, Buf[ans].name, Buf[ans].sex, Buf[ans].age);
+                printf("%s %s %s %d\n", buf[ans].no, buf[ans].name, buf[ans].sex, buf[ans].age);
             }
         }
     }
