@@ -21,7 +21,7 @@ int main(){
             for(int j=s;j>=list[i].w;j--){
                 dp[i][j] = max(dp[i-1][j],dp[i-1][j-list[i].w]+list[i].v);
             }
-            for(int j=list[i]-1;j>=0;j--){
+            for(int j=list[i].w-1;j>=0;j--){
                 dp[i][j] = dp[i-1][j];
             }
         }
